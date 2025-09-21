@@ -1,0 +1,3049 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dyson Vitara - Revolutionary citrus juicing technology with precision engineering and premium design.">
+  <title>Dyson Vitara - Premium Citrus Experience</title>
+
+  <style>
+    /* Dyson Brand Colors & Variables */
+    :root {
+      --dyson-red: #e31e24;
+      --dyson-dark: #1a1a1a;
+      --orange-accent: #ff6b35;
+      --orange-light: #fff4e6;
+      --text-color: #333;
+      --light-text-color: #ffffff;
+      --background-color: #ffffff;
+      --card-bg-color: #ffffff;
+      --border-color: #e0e0e0;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      --shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.15);
+      --space-xs: 8px;
+      --space-sm: 16px;
+      --space-md: 32px;
+      --space-lg: 64px;
+      --space-xl: 96px;
+      --font-large: 3.5rem;
+      --font-medium: 2rem;
+      --font-small: 1rem;
+      --transition-speed: 0.4s;
+      --transition-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    [data-theme="dark"] {
+      --dyson-red: #ff4757;
+      --orange-accent: #ff8c42;
+      --orange-light: #2d1b0e;
+      --text-color: #e0e0e0;
+      --background-color: #1a1a1a;
+      --card-bg-color: #2c2c2c;
+      --border-color: #404040;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    body {
+      font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--background-color);
+      transition: all var(--transition-speed) ease;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* Enhanced Floating Orange Animation */
+    .floating-orange {
+      position: fixed;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(45deg, var(--orange-accent), #ff8c42, #ffa726);
+      border-radius: 50%;
+      opacity: 0.2;
+      animation: float 12s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 1;
+      box-shadow: 0 8px 32px rgba(255, 107, 53, 0.3);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .floating-orange:nth-child(1) {
+      top: 15%;
+      left: 8%;
+      animation-delay: 0s;
+      animation-duration: 10s;
+    }
+
+    .floating-orange:nth-child(2) {
+      top: 65%;
+      right: 12%;
+      animation-delay: 4s;
+      animation-duration: 14s;
+    }
+
+    .floating-orange:nth-child(3) {
+      bottom: 25%;
+      left: 15%;
+      animation-delay: 8s;
+      animation-duration: 11s;
+    }
+
+    .floating-orange:nth-child(4) {
+      top: 40%;
+      right: 5%;
+      animation-delay: 2s;
+      animation-duration: 13s;
+    }
+
+    .floating-orange:nth-child(5) {
+      bottom: 60%;
+      left: 5%;
+      animation-delay: 6s;
+      animation-duration: 9s;
+    }
+
+    @keyframes float {
+      0%, 100% { 
+        transform: translateY(0px) rotate(0deg) scale(1); 
+        opacity: 0.2; 
+      }
+      25% { 
+        transform: translateY(-20px) rotate(90deg) scale(1.1); 
+        opacity: 0.3; 
+      }
+      50% { 
+        transform: translateY(-40px) rotate(180deg) scale(0.9); 
+        opacity: 0.25; 
+      }
+      75% { 
+        transform: translateY(-20px) rotate(270deg) scale(1.05); 
+        opacity: 0.35; 
+      }
+    }
+
+    /* Pulse Animation for Interactive Elements */
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 53, 0.3); }
+      50% { box-shadow: 0 0 40px rgba(255, 107, 53, 0.6); }
+    }
+
+    @keyframes slideInUp {
+      from {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translateX(100px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeInScale {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.3);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      70% {
+        transform: scale(0.9);
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Page Loader */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--background-color);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 1;
+      transition: opacity 0.8s ease-in-out;
+    }
+
+    .loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loader::after {
+      content: '';
+      width: 60px;
+      height: 60px;
+      border: 4px solid var(--border-color);
+      border-top-color: var(--dyson-red);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      padding: var(--space-sm) 0;
+      transition: all var(--transition-speed);
+    }
+
+    [data-theme="dark"] .navbar {
+      background: rgba(26, 26, 26, 0.95);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-sm);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dyson-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--dyson-red);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--space-md);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color var(--transition-speed);
+    }
+
+    .nav-links a {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-links a::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--dyson-red), var(--orange-accent));
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::before {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      color: var(--dyson-red);
+      transform: translateY(-2px);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--space-sm);
+    }
+
+    .section {
+      padding: var(--space-xl) 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Enhanced Buttons */
+    .btn {
+      display: inline-block;
+      padding: var(--space-sm) var(--space-md);
+      background: linear-gradient(135deg, var(--dyson-red), #c41e3a);
+      color: var(--light-text-color);
+      text-decoration: none;
+      border: none;
+      border-radius: 50px;
+      font-size: var(--font-small);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-speed) var(--transition-bounce);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn:hover, .btn:focus {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: var(--shadow-hover);
+      animation: pulse 0.6s ease-in-out;
+    }
+
+    .btn:active {
+      transform: translateY(-1px) scale(0.98);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--dyson-red);
+      border: 2px solid var(--dyson-red);
+    }
+
+    .btn-secondary:hover {
+      background: var(--dyson-red);
+      color: var(--light-text-color);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--light-text-color);
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--dyson-dark) 0%, #2c2c2c 100%);
+    }
+
+    .hero-video-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .hero-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      filter: brightness(0.4) contrast(1.2);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: var(--space-sm);
+      transform: translateY(50px);
+      opacity: 0;
+      animation: hero-fade-in 1.5s forwards;
+      animation-delay: 0.8s;
+    }
+
+    @keyframes hero-fade-in {
+      0% {
+        transform: translateY(50px) scale(0.9);
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(-10px) scale(1.02);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .hero-content h1 {
+      animation: titleGlow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes titleGlow {
+      0% {
+        text-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+      }
+      100% {
+        text-shadow: 0 0 40px rgba(255, 107, 53, 0.6), 0 0 60px rgba(255, 107, 53, 0.3);
+      }
+    }
+
+    .hero-content h1 {
+      font-size: var(--font-large);
+      margin: 0;
+      font-weight: 300;
+      letter-spacing: -2px;
+      background: linear-gradient(135deg, var(--light-text-color), var(--orange-accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+    }
+
+    .hero-content .subtitle {
+      font-size: 1.25rem;
+      margin: var(--space-sm) 0 var(--space-md);
+      opacity: 0.9;
+      font-weight: 300;
+    }
+
+    .hero-content .price {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--orange-accent);
+      margin: var(--space-md) 0;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: var(--space-sm);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .video-controls {
+      position: absolute;
+      bottom: var(--space-md);
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.3);
+      padding: var(--space-sm);
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+    }
+
+    .video-controls button {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      color: var(--light-text-color);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-speed);
+    }
+
+    .video-controls button:hover {
+      background: var(--dyson-red);
+      transform: scale(1.1);
+    }
+
+    .video-caption {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: var(--font-small);
+      margin-left: var(--space-sm);
+    }
+
+    /* Hero CTA Section */
+    .hero-cta-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: var(--space-xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-cta-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, 
+        rgba(255, 107, 53, 0.05) 0%, 
+        rgba(227, 30, 36, 0.03) 25%, 
+        rgba(255, 107, 53, 0.05) 50%, 
+        rgba(227, 30, 36, 0.03) 75%, 
+        rgba(255, 107, 53, 0.05) 100%);
+      background-size: 400% 400%;
+      animation: backgroundShift 15s ease-in-out infinite;
+    }
+
+    .hero-cta-content {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      transform: translateY(30px);
+      opacity: 0;
+      animation: heroCTAIn 1s ease-out 0.5s forwards;
+    }
+
+    @keyframes heroCTAIn {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .hero-title {
+      font-size: var(--font-large);
+      color: var(--dyson-red);
+      margin-bottom: var(--space-md);
+      font-weight: 300;
+      position: relative;
+      animation: titleGlow 3s ease-in-out infinite alternate;
+    }
+
+    .hero-subtitle {
+      font-size: 1.3rem;
+      color: var(--text-color);
+      margin-bottom: var(--space-lg);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .hero-price {
+      font-size: 2rem;
+      color: var(--dyson-red);
+      font-weight: 600;
+      margin-bottom: var(--space-lg);
+      position: relative;
+    }
+
+    .hero-price::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: -50px;
+      right: -50px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--dyson-red), transparent);
+      transform: translateY(-50%);
+    }
+
+    .hero-cta-section .hero-buttons {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-cta-section .hero-buttons .btn {
+      min-width: 150px;
+      padding: var(--space-md) var(--space-lg);
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-cta-section .hero-buttons .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .hero-cta-section .hero-buttons .btn:hover::before {
+      left: 100%;
+    }
+
+    .hero-cta-section .hero-buttons .btn-primary {
+      background: var(--dyson-red);
+      color: var(--light-text-color);
+      border: 2px solid var(--dyson-red);
+    }
+
+    .hero-cta-section .hero-buttons .btn-primary:hover {
+      background: var(--orange-accent);
+      border-color: var(--orange-accent);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+    }
+
+    .hero-cta-section .hero-buttons .btn-secondary {
+      background: transparent;
+      color: var(--dyson-red);
+      border: 2px solid var(--dyson-red);
+    }
+
+    .hero-cta-section .hero-buttons .btn-secondary:hover {
+      background: var(--dyson-red);
+      color: var(--light-text-color);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(227, 30, 36, 0.4);
+    }
+
+    /* Features Section */
+    #features {
+      background: var(--orange-light);
+      position: relative;
+    }
+
+    #features .container {
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    @media (min-width: 768px) {
+      #features .container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: var(--font-medium);
+      color: var(--dyson-dark);
+      margin-bottom: var(--space-lg);
+      font-weight: 300;
+      grid-column: 1 / -1;
+    }
+
+    .feature-card {
+      background-color: var(--card-bg-color);
+      border-radius: 20px;
+      padding: var(--space-lg);
+      box-shadow: var(--shadow);
+      text-align: center;
+      transform: translateY(60px) rotateX(15deg);
+      opacity: 0;
+      transition: all 1s var(--transition-bounce);
+      border: 1px solid var(--border-color);
+      position: relative;
+      overflow: hidden;
+      perspective: 1000px;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--dyson-red), var(--orange-accent));
+      transition: left 0.6s ease;
+    }
+
+    .feature-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(227, 30, 36, 0.05));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+    }
+
+    .feature-card:hover::before {
+      left: 0;
+    }
+
+    .feature-card:hover::after {
+      opacity: 1;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-15px) scale(1.03) rotateX(0deg);
+      box-shadow: var(--shadow-hover);
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    .feature-card.is-visible {
+      transform: translateY(0) rotateX(0deg);
+      opacity: 1;
+    }
+
+    .feature-card:nth-child(2).is-visible {
+      animation-delay: 0.2s;
+    }
+
+    .feature-card:nth-child(3).is-visible {
+      animation-delay: 0.4s;
+    }
+
+    .feature-card:nth-child(4).is-visible {
+      animation-delay: 0.6s;
+    }
+
+    .feature-card-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto var(--space-md);
+      fill: var(--dyson-red);
+      transition: all 0.6s var(--transition-bounce);
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 4px 8px rgba(227, 30, 36, 0.3));
+    }
+
+    .feature-card:hover .feature-card-icon {
+      transform: scale(1.2) rotate(10deg);
+      fill: var(--orange-accent);
+      filter: drop-shadow(0 8px 16px rgba(255, 107, 53, 0.5));
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    .feature-card-icon::before {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      background: radial-gradient(circle, rgba(255, 107, 53, 0.2), transparent);
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .feature-card:hover .feature-card-icon::before {
+      opacity: 1;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 var(--space-sm);
+      font-size: 1.5rem;
+      color: var(--dyson-dark);
+      font-weight: 600;
+    }
+
+    .feature-card p {
+      margin: 0;
+      font-size: var(--font-small);
+      line-height: 1.7;
+      color: var(--text-color);
+    }
+
+    /* Enhanced Features Grid */
+    .features-grid {
+      display: grid;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-xl);
+      grid-template-columns: 1fr;
+      align-items: stretch;
+    }
+
+    @media (min-width: 768px) {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-xl);
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-lg);
+      }
+    }
+
+    /* Enhanced Feature Cards */
+    .feature-card {
+      background: var(--card-bg-color);
+      border-radius: 20px;
+      padding: var(--space-lg);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      border: 2px solid transparent;
+      transform: translateY(30px);
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 350px;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card.is-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--dyson-red);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .feature-card:hover::before {
+      left: 100%;
+    }
+
+    .feature-icon-wrapper {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .feature-card-icon {
+      width: 60px;
+      height: 60px;
+      fill: var(--dyson-red);
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .feature-card:hover .feature-card-icon {
+      transform: scale(1.2) rotate(10deg);
+      fill: var(--orange-accent);
+    }
+
+    .feature-pulse {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      border: 2px solid var(--dyson-red);
+      border-radius: 50%;
+      opacity: 0;
+      animation: featurePulse 2s ease-out infinite;
+    }
+
+    @keyframes featurePulse {
+      0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    .feature-card h3 {
+      color: var(--dyson-red);
+      margin-bottom: var(--space-sm);
+      font-size: 1.3rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .feature-card p {
+      color: var(--text-color);
+      line-height: 1.6;
+      margin-bottom: var(--space-md);
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .feature-highlight {
+      background: linear-gradient(135deg, var(--dyson-red), var(--orange-accent));
+      color: var(--light-text-color);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: auto;
+      align-self: center;
+    }
+
+    /* Characteristics Section */
+    .characteristics-section {
+      margin-top: var(--space-xl);
+      padding-top: var(--space-xl);
+      border-top: 2px solid rgba(255, 107, 53, 0.2);
+    }
+
+    .characteristics-title {
+      text-align: center;
+      color: var(--dyson-red);
+      margin-bottom: var(--space-lg);
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .characteristics-grid {
+      display: grid;
+      gap: var(--space-md);
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      align-items: stretch;
+    }
+
+    .characteristic-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-md);
+      padding: var(--space-md);
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(227, 30, 36, 0.05));
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      transform: translateX(-20px);
+      opacity: 0;
+      min-height: 100px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .characteristic-item.is-visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .characteristic-item:hover {
+      transform: translateX(5px);
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(227, 30, 36, 0.1));
+    }
+
+    .characteristic-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--dyson-red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .characteristic-icon svg {
+      width: 25px;
+      height: 25px;
+      stroke: var(--light-text-color);
+      stroke-width: 2;
+    }
+
+    .characteristic-content {
+      flex: 1;
+    }
+
+    .characteristic-item h4 {
+      color: var(--dyson-red);
+      margin-bottom: var(--space-xs);
+      font-weight: 600;
+      font-size: 1.1rem;
+      line-height: 1.3;
+    }
+
+    .characteristic-item p {
+      color: var(--text-color);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* Rest of CSS continues... */
+    #specs {
+      background-color: #f8f9fa;
+    }
+
+    .specs-grid {
+      display: grid;
+      gap: var(--space-lg);
+      align-items: center;
+    }
+
+    @media (min-width: 768px) {
+      .specs-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .specs-text h2 {
+      font-size: var(--font-medium);
+      color: var(--dyson-dark);
+      margin-bottom: var(--space-md);
+      font-weight: 300;
+    }
+
+    .specs-text p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-color);
+    }
+
+    .specs-table-wrapper {
+      position: relative;
+      background: var(--card-bg-color);
+      border-radius: 20px;
+      padding: var(--space-md);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transform: translateX(50px);
+      opacity: 0;
+      transition: all 1s ease;
+    }
+
+    .specs-table-wrapper.is-visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .specs-table-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.02), rgba(227, 30, 36, 0.02));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .specs-table-wrapper:hover::before {
+      opacity: 1;
+    }
+
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: transparent;
+      position: relative;
+      z-index: 2;
+    }
+
+    .specs-table th, .specs-table td {
+      padding: var(--space-sm);
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .specs-table th {
+      background-color: transparent;
+      color: var(--dyson-dark);
+      font-weight: 600;
+      width: 40%;
+      position: relative;
+    }
+
+    .specs-table th::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--dyson-red), var(--orange-accent));
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .specs-table tr:hover th::after {
+      transform: scaleY(1);
+    }
+
+    .specs-table tr {
+      transition: all 0.3s ease;
+    }
+
+    .specs-table tr:hover {
+      background: rgba(255, 107, 53, 0.05);
+      transform: translateX(5px);
+    }
+
+    .specs-table tr:hover td {
+      color: var(--dyson-red);
+      font-weight: 500;
+    }
+
+    .specs-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .specs-table td {
+      position: relative;
+    }
+
+    .specs-table td::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background: var(--orange-accent);
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .specs-table tr:hover td::before {
+      opacity: 1;
+      animation: pulse 1s ease-in-out infinite;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: var(--space-sm);
+      right: var(--space-sm);
+      background: var(--dyson-red);
+      border: none;
+      cursor: pointer;
+      color: var(--light-text-color);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-speed);
+    }
+
+    .copy-btn:hover {
+      background: var(--orange-accent);
+      transform: scale(1.1);
+    }
+
+    .copy-btn svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    #other-products {
+      background: var(--background-color);
+    }
+
+    .filter-controls {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-lg);
+    }
+
+    .filter-btn {
+      background: transparent;
+      border: 2px solid var(--border-color);
+      cursor: pointer;
+      color: var(--text-color);
+      font-size: var(--font-small);
+      padding: var(--space-sm) var(--space-md);
+      border-radius: 50px;
+      transition: all var(--transition-speed);
+      font-weight: 500;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--dyson-red);
+      color: var(--light-text-color);
+      border-color: var(--dyson-red);
+    }
+
+    .product-grid {
+      display: grid;
+      gap: var(--space-md);
+    }
+
+    @media (min-width: 576px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 992px) {
+      .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .product-card {
+      background-color: var(--card-bg-color);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.6s var(--transition-bounce);
+      border: 1px solid var(--border-color);
+      position: relative;
+      transform: translateY(30px);
+      opacity: 0;
+    }
+
+    .product-card.is-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--dyson-red), var(--orange-accent));
+      transform: scaleX(0);
+      transition: transform 0.6s ease;
+    }
+
+    .product-card::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.03), rgba(227, 30, 36, 0.03));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      z-index: 1;
+    }
+
+    .product-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .product-card:hover::after {
+      opacity: 1;
+    }
+
+    .product-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: var(--shadow-hover);
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      transition: transform var(--transition-speed);
+    }
+
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .product-card-content {
+      padding: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-card h3 {
+      margin: 0 0 var(--space-sm);
+      font-size: 1.25rem;
+      color: var(--dyson-dark);
+      font-weight: 600;
+    }
+
+    .product-card .price {
+      font-weight: 700;
+      color: var(--dyson-red);
+      margin-bottom: var(--space-md);
+      font-size: 1.5rem;
+    }
+
+    .product-card .add-to-cart-btn {
+      margin-top: auto;
+    }
+
+    .toast {
+      visibility: hidden;
+      min-width: 300px;
+      background: var(--dyson-dark);
+      color: var(--light-text-color);
+      text-align: center;
+      border-radius: 50px;
+      padding: var(--space-sm) var(--space-md);
+      position: fixed;
+      z-index: 1000;
+      bottom: var(--space-lg);
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+      box-shadow: var(--shadow-hover);
+    }
+
+    .toast.show {
+      visibility: visible;
+      animation: toastSlide 0.5s ease-out, toastSlide 0.5s ease-in 2.5s reverse;
+    }
+
+    @keyframes toastSlide {
+      from { 
+        bottom: -100px; 
+        opacity: 0; 
+      }
+      to { 
+        bottom: var(--space-lg); 
+        opacity: 1; 
+      }
+    }
+
+    footer {
+      background: var(--dyson-dark);
+      color: var(--light-text-color);
+      padding: var(--space-xl) 0 var(--space-md);
+    }
+
+    .footer-content {
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    @media (min-width: 768px) {
+      .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .footer-links a, .social-icons a {
+      color: var(--light-text-color);
+      text-decoration: none;
+      transition: color var(--transition-speed);
+    }
+
+    .footer-links a:hover, .social-icons a:hover {
+      color: var(--orange-accent);
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: var(--space-md);
+    }
+
+    .social-icons svg {
+      width: 28px;
+      height: 28px;
+      fill: currentColor;
+      transition: transform var(--transition-speed);
+    }
+
+    .social-icons a:hover svg {
+      transform: scale(1.2);
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+    }
+
+    .newsletter-form input {
+      padding: var(--space-sm);
+      border: 2px solid var(--border-color);
+      border-radius: 50px;
+      background-color: transparent;
+      color: var(--light-text-color);
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .newsletter-form input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .newsletter-form button {
+      background: var(--dyson-red);
+      color: var(--light-text-color);
+      border: none;
+      padding: var(--space-sm) var(--space-md);
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all var(--transition-speed);
+    }
+
+    .newsletter-form button:hover {
+      background: var(--orange-accent);
+      transform: translateY(-2px);
+    }
+
+    .newsletter-status {
+      font-size: var(--font-small);
+      margin-top: var(--space-sm);
+    }
+
+    .dark-mode-toggle {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      background: var(--card-bg-color);
+      border: 2px solid var(--border-color);
+      color: var(--text-color);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 20px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-speed);
+      box-shadow: var(--shadow);
+    }
+
+    .dark-mode-toggle:hover {
+      background: var(--dyson-red);
+      color: var(--light-text-color);
+      border-color: var(--dyson-red);
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --font-large: 2.5rem;
+        --font-medium: 1.5rem;
+        --space-lg: 48px;
+        --space-xl: 64px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    /* Product Overview Section */
+    .product-overview-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: var(--space-xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-overview-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(45deg, 
+        rgba(255, 107, 53, 0.05) 0%, 
+        rgba(227, 30, 36, 0.03) 25%, 
+        rgba(255, 107, 53, 0.05) 50%, 
+        rgba(227, 30, 36, 0.03) 75%, 
+        rgba(255, 107, 53, 0.05) 100%);
+      background-size: 400% 400%;
+      animation: backgroundShift 15s ease-in-out infinite;
+    }
+
+    .overview-header {
+      text-align: center;
+      margin-bottom: var(--space-xl);
+      position: relative;
+      z-index: 2;
+    }
+
+    .overview-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-color);
+      margin-top: var(--space-md);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    /* Product Gallery */
+    .product-gallery {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-xl);
+      position: relative;
+      z-index: 2;
+    }
+
+    .gallery-main {
+      position: relative;
+    }
+
+    .main-image-container {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow-hover);
+      background: var(--card-bg-color);
+    }
+
+    .main-product-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .main-image-container:hover .main-product-image {
+      transform: scale(1.05);
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(227, 30, 36, 0.8), rgba(255, 107, 53, 0.6));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main-image-container:hover .image-overlay {
+      opacity: 1;
+    }
+
+    .overlay-content {
+      text-align: center;
+      color: var(--light-text-color);
+    }
+
+    .overlay-content h3 {
+      font-size: 2rem;
+      margin-bottom: var(--space-sm);
+      font-weight: 600;
+    }
+
+    .overlay-content p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* Gallery Thumbnails */
+    .gallery-thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
+    }
+
+    .thumbnail {
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 3px solid transparent;
+    }
+
+    .thumbnail:hover {
+      transform: translateX(10px);
+      border-color: var(--dyson-red);
+    }
+
+    .thumbnail.active {
+      border-color: var(--dyson-red);
+      transform: translateX(10px);
+    }
+
+    .thumbnail img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .thumbnail:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Feature Highlights */
+    .feature-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--space-lg);
+      margin-bottom: var(--space-xl);
+      position: relative;
+      z-index: 2;
+    }
+
+    .highlight-card {
+      background: var(--card-bg-color);
+      border-radius: 20px;
+      padding: var(--space-lg);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      border: 2px solid transparent;
+      transform: translateY(30px);
+      opacity: 0;
+    }
+
+    .highlight-card.is-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--dyson-red);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .highlight-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .highlight-card:hover::before {
+      left: 100%;
+    }
+
+    .highlight-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto var(--space-md);
+      background: linear-gradient(135deg, var(--dyson-red), var(--orange-accent));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .highlight-icon svg {
+      width: 40px;
+      height: 40px;
+      stroke: var(--light-text-color);
+      stroke-width: 2;
+    }
+
+    .highlight-content h3 {
+      color: var(--dyson-red);
+      margin-bottom: var(--space-sm);
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .highlight-content p {
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .highlight-animation {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      pointer-events: none;
+    }
+
+    .pulse-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      height: 60px;
+      border: 2px solid var(--dyson-red);
+      border-radius: 50%;
+      opacity: 0;
+      animation: pulseRing 2s ease-out infinite;
+    }
+
+    @keyframes pulseRing {
+      0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    /* Technical Specifications */
+    .tech-specs {
+      background: var(--card-bg-color);
+      border-radius: 20px;
+      padding: var(--space-xl);
+      margin-bottom: var(--space-xl);
+      position: relative;
+      z-index: 2;
+      box-shadow: var(--shadow);
+    }
+
+    .specs-title {
+      text-align: center;
+      color: var(--dyson-red);
+      margin-bottom: var(--space-lg);
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-lg);
+    }
+
+    .spec-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      padding: var(--space-md);
+      border-radius: 15px;
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.05), rgba(227, 30, 36, 0.05));
+      transition: all 0.3s ease;
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+
+    .spec-item.is-visible {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    .spec-item:hover {
+      transform: translateX(5px);
+      background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(227, 30, 36, 0.1));
+    }
+
+    .spec-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--dyson-red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .spec-icon svg {
+      width: 30px;
+      height: 30px;
+      stroke: var(--light-text-color);
+      stroke-width: 2;
+    }
+
+    .spec-details h4 {
+      color: var(--dyson-red);
+      margin-bottom: var(--space-xs);
+      font-weight: 600;
+    }
+
+    .spec-details p {
+      color: var(--text-color);
+      font-weight: 500;
+    }
+
+    /* Call to Action */
+    .overview-cta {
+      background: linear-gradient(135deg, var(--dyson-red), var(--orange-accent));
+      border-radius: 20px;
+      padding: var(--space-xl);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .overview-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+      animation: rotate 20s linear infinite;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-content h3 {
+      color: var(--light-text-color);
+      font-size: 2rem;
+      margin-bottom: var(--space-md);
+      font-weight: 600;
+    }
+
+    .cta-content p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+      margin-bottom: var(--space-lg);
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-buttons .btn {
+      min-width: 150px;
+    }
+
+    .cta-buttons .btn-primary {
+      background: var(--light-text-color);
+      color: var(--dyson-red);
+    }
+
+    .cta-buttons .btn-primary:hover {
+      background: rgba(255, 255, 255, 0.9);
+      transform: translateY(-3px);
+    }
+
+    .cta-buttons .btn-secondary {
+      background: transparent;
+      color: var(--light-text-color);
+      border: 2px solid var(--light-text-color);
+    }
+
+    .cta-buttons .btn-secondary:hover {
+      background: var(--light-text-color);
+      color: var(--dyson-red);
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .product-gallery {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+      }
+
+      .gallery-thumbnails {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: var(--space-sm);
+      }
+
+      .thumbnail {
+        min-width: 120px;
+        flex-shrink: 0;
+      }
+
+      .thumbnail:hover {
+        transform: translateY(-5px);
+      }
+
+      .thumbnail.active {
+        transform: translateY(-5px);
+      }
+
+      .feature-highlights {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+      }
+
+      .specs-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-buttons .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .overview-subtitle {
+        font-size: 1rem;
+      }
+
+      .cta-content h3 {
+        font-size: 1.5rem;
+      }
+
+      /* Mobile adjustments for features and characteristics */
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+      }
+
+      .feature-card {
+        min-height: 300px;
+        padding: var(--space-md);
+      }
+
+      .characteristics-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+      }
+
+      .characteristic-item {
+        min-height: 80px;
+        padding: var(--space-sm);
+      }
+
+      .characteristic-icon {
+        width: 40px;
+        height: 40px;
+      }
+
+      .characteristic-icon svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .characteristic-item h4 {
+        font-size: 1rem;
+      }
+
+      .characteristic-item p {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="loader" id="page-loader"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="dyson-logo">dyson</a>
+      <ul class="nav-links">
+        <li><a href="#product-overview">Overview</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#specs">Specifications</a></li>
+        <li><a href="#other-products">Juicers</a></li>
+        <li><a href="mailto:support@dyson.com">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Floating Oranges -->
+  <div class="floating-orange"></div>
+  <div class="floating-orange"></div>
+  <div class="floating-orange"></div>
+  <div class="floating-orange"></div>
+  <div class="floating-orange"></div>
+
+  <header class="hero" id="hero">
+    <div class="hero-video-wrapper">
+      <video class="hero-video" id="hero-video" autoplay muted loop playsinline poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect width='800' height='600' fill='%23ff6b35'/%3E%3Ccircle cx='400' cy='300' r='150' fill='%23ffffff' opacity='0.2'/%3E%3C/svg%3E" loading="lazy">
+        <source src="hero-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="video-controls">
+      <button id="play-pause-btn" aria-label="Play or pause video">
+        <svg id="play-icon" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="currentColor" d="M8 5v14l11-7z"/>
+        </svg>
+        <svg id="pause-icon" style="display: none;" viewBox="0 0 24 24" width="24" height="24">
+          <path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+        </svg>
+      </button>
+      <span class="video-caption">Play/Pause</span>
+    </div>
+  </header>
+
+  <!-- Hero CTA Section -->
+  <section class="hero-cta-section">
+    <div class="container">
+      <div class="hero-cta-content">
+        <h1 class="hero-title">Dyson Vitara</h1>
+        <p class="hero-subtitle">Revolutionary citrus extraction with Dyson's precision engineering</p>
+        <div class="hero-price">Starting at $299</div>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">Buy Now</a>
+          <a href="#product-overview" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="features" class="section">
+      <div class="container">
+        <h2 class="section-title">Revolutionary Dyson Vitara Features</h2>
+        
+        <!-- Main Features Grid -->
+        <div class="features-grid">
+        <div class="feature-card" data-animate="true">
+            <div class="feature-icon-wrapper">
+          <svg class="feature-card-icon" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="currentColor"/>
+          </svg>
+              <div class="feature-pulse"></div>
+        </div>
+            <h3>Wireless Charger</h3>
+            <p>Revolutionary wireless charging technology eliminates the need for cables. Simply place your Dyson Vitara on the charging pad for effortless power.</p>
+            <div class="feature-highlight">No Cables Required</div>
+          </div>
+
+        <div class="feature-card" data-animate="true">
+            <div class="feature-icon-wrapper">
+          <svg class="feature-card-icon" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+          </svg>
+              <div class="feature-pulse"></div>
+        </div>
+            <h3>Automated Cleaning System</h3>
+            <p>Advanced self-cleaning technology automatically cleans all components after each use. No manual scrubbing or disassembly required.</p>
+            <div class="feature-highlight">100% Automated</div>
+          </div>
+
+        <div class="feature-card" data-animate="true">
+            <div class="feature-icon-wrapper">
+              <svg class="feature-card-icon" viewBox="0 0 24 24">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor"/>
+              </svg>
+              <div class="feature-pulse"></div>
+            </div>
+            <h3>Massage Extraction Technology</h3>
+            <p>Revolutionary massage technology gently kneads oranges to extract maximum juice while preserving nutrients and natural flavors.</p>
+            <div class="feature-highlight">Gentle & Efficient</div>
+          </div>
+
+          <div class="feature-card" data-animate="true">
+            <div class="feature-icon-wrapper">
+          <svg class="feature-card-icon" viewBox="0 0 24 24">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" fill="currentColor"/>
+          </svg>
+              <div class="feature-pulse"></div>
+            </div>
+            <h3>Smart Orange Detection</h3>
+            <p>Advanced sensors automatically detect if the object is an orange and verify it meets the optimal size requirements for perfect juicing.</p>
+            <div class="feature-highlight">Intelligent Detection</div>
+          </div>
+        </div>
+        </div>
+
+
+        <!-- Characteristics Section -->
+        <div class="characteristics-section">
+          <h3 class="characteristics-title">Key Characteristics</h3>
+          <div class="characteristics-grid">
+            <div class="characteristic-item" data-animate="true">
+              <div class="characteristic-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <div class="characteristic-content">
+                <h4>Portable Design</h4>
+                <p>Compact and lightweight design makes it perfect for any kitchen space or outdoor use.</p>
+              </div>
+            </div>
+
+            <div class="characteristic-item" data-animate="true">
+              <div class="characteristic-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+              <div class="characteristic-content">
+                <h4>Energy Efficient</h4>
+                <p>Advanced power management ensures optimal energy consumption while maintaining peak performance.</p>
+              </div>
+            </div>
+
+            <div class="characteristic-item" data-animate="true">
+              <div class="characteristic-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                </svg>
+              </div>
+              <div class="characteristic-content">
+                <h4>Quiet Operation</h4>
+                <p>Engineered for whisper-quiet operation, perfect for early morning or late-night juicing.</p>
+              </div>
+            </div>
+
+            <div class="characteristic-item" data-animate="true">
+              <div class="characteristic-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div class="characteristic-content">
+                <h4>Durable Construction</h4>
+                <p>Built with premium materials to withstand daily use and provide years of reliable performance.</p>
+              </div>
+            </div>
+
+            <div class="characteristic-item" data-animate="true">
+              <div class="characteristic-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 6h18l-2 13H5L3 6z"/>
+                </svg>
+              </div>
+              <div class="characteristic-content">
+                <h4>Large Capacity</h4>
+                <p>1.5L collection jug allows for multiple servings without frequent emptying.</p>
+              </div>
+            </div>
+
+            <div class="characteristic-item" data-animate="true">
+              <div class="characteristic-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <div class="characteristic-content">
+                <h4>Premium Materials</h4>
+                <p>BPA-free Tritan construction with stainless steel components for food safety and durability.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- Dyson Product Overview Section -->
+    <section id="product-overview" class="product-overview-section">
+      <div class="container">
+        <div class="overview-header">
+          <h2 class="section-title">Dyson Vitara Product Overview</h2>
+          <p class="overview-subtitle">Experience the future of citrus juicing with revolutionary technology and precision engineering</p>
+        </div>
+
+        <!-- Product Gallery -->
+        <div class="product-gallery" data-animate="true">
+          <div class="gallery-main">
+            <div class="main-image-container">
+              <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Dyson Vitara Premium Orange Juicer" class="main-product-image">
+              <div class="image-overlay">
+                <div class="overlay-content">
+                  <h3>Revolutionary Design</h3>
+                  <p>Engineered for perfection</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="gallery-thumbnails">
+            <div class="thumbnail active" data-image="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80">
+              <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Main View">
+            </div>
+            <div class="thumbnail" data-image="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80">
+              <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Side View">
+            </div>
+            <div class="thumbnail" data-image="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80">
+              <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Detail View">
+            </div>
+            <div class="thumbnail" data-image="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80">
+              <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="In Use">
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Highlights -->
+        <div class="feature-highlights" data-animate="true">
+          <div class="highlight-card" data-animate="true">
+            <div class="highlight-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <div class="highlight-content">
+              <h3>Premium Materials</h3>
+              <p>BPA-free Tritan construction with stainless steel components for durability and food safety</p>
+            </div>
+            <div class="highlight-animation">
+              <div class="pulse-ring"></div>
+            </div>
+          </div>
+
+          <div class="highlight-card" data-animate="true">
+            <div class="highlight-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+            </div>
+            <div class="highlight-content">
+              <h3>1200W Digital Motor</h3>
+              <p>High-performance motor delivers consistent power for optimal juice extraction</p>
+            </div>
+            <div class="highlight-animation">
+              <div class="pulse-ring"></div>
+            </div>
+          </div>
+
+          <div class="highlight-card" data-animate="true">
+            <div class="highlight-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+              </svg>
+            </div>
+            <div class="highlight-content">
+              <h3>Smart Technology</h3>
+              <p>Advanced sensors and controls for precise juicing and automatic operation</p>
+            </div>
+            <div class="highlight-animation">
+              <div class="pulse-ring"></div>
+            </div>
+          </div>
+
+          <div class="highlight-card" data-animate="true">
+            <div class="highlight-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div class="highlight-content">
+              <h3>Easy Maintenance</h3>
+              <p>Self-cleaning function and dishwasher-safe components for effortless care</p>
+            </div>
+            <div class="highlight-animation">
+              <div class="pulse-ring"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Technical Specifications -->
+        <div class="tech-specs" data-animate="true">
+          <h3 class="specs-title">Technical Specifications</h3>
+          <div class="specs-grid">
+            <div class="spec-item" data-animate="true">
+              <div class="spec-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                </svg>
+              </div>
+              <div class="spec-details">
+                <h4>Power</h4>
+                <p>1200W Digital Motor</p>
+              </div>
+            </div>
+
+            <div class="spec-item" data-animate="true">
+              <div class="spec-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 6h18l-2 13H5L3 6z"/>
+                </svg>
+              </div>
+              <div class="spec-details">
+                <h4>Capacity</h4>
+                <p>1.5L Collection Jug</p>
+              </div>
+            </div>
+
+            <div class="spec-item" data-animate="true">
+              <div class="spec-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
+              <div class="spec-details">
+                <h4>Efficiency</h4>
+                <p>95% Juice Extraction</p>
+              </div>
+            </div>
+
+            <div class="spec-item" data-animate="true">
+              <div class="spec-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                </svg>
+              </div>
+              <div class="spec-details">
+                <h4>Weight</h4>
+                <p>4.2kg</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="overview-cta" data-animate="true">
+          <div class="cta-content">
+            <h3>Ready to Experience the Future of Juicing?</h3>
+            <p>Join thousands of satisfied customers who have revolutionized their morning routine</p>
+            <div class="cta-buttons">
+              <a href="#contact" class="btn btn-primary">Order Now</a>
+              <a href="#features" class="btn btn-secondary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="specs" class="section">
+      <div class="container specs-grid">
+        <div class="specs-text">
+          <h2>Technical Specifications</h2>
+          <p>
+            Discover the engineering excellence behind the Dyson Vitara. 
+            From powerful motor performance to intelligent design features, 
+            every detail is crafted for the ultimate citrus juicing experience.
+          </p>
+        </div>
+        <div class="specs-table-wrapper">
+          <table class="specs-table" id="product-specs">
+            <caption>Dyson Vitara Technical Details</caption>
+            <thead>
+              <tr>
+                <th scope="col">Specification</th>
+                <th scope="col">Detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Motor Power</td>
+                <td>1200W Digital Motor</td>
+              </tr>
+              <tr>
+                <td>Juice Capacity</td>
+                <td>1.5L Collection Jug</td>
+              </tr>
+              <tr>
+                <td>Extraction Rate</td>
+                <td>95% Juice Extraction</td>
+              </tr>
+              <tr>
+                <td>Materials</td>
+                <td>BPA-Free Tritan, Stainless Steel</td>
+              </tr>
+              <tr>
+                <td>Warranty</td>
+                <td>2 Year Manufacturer Warranty</td>
+              </tr>
+            </tbody>
+          </table>
+          <button class="copy-btn" aria-label="Copy specifications to clipboard" onclick="copySpecs()">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+              <path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="other-products" class="section">
+      <div class="container">
+        <h2 class="section-title">Dyson Juicer Collection</h2>
+        <div class="filter-controls">
+          <button class="filter-btn active" data-sort="popular">Popular</button>
+          <button class="filter-btn" data-sort="price-low">Price: Low → High</button>
+        </div>
+        <div class="product-grid" id="product-list">
+          <div class="product-card" data-price="299.99">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Crect width='300' height='250' fill='%23f0f0f0'/%3E%3Ctext x='150' y='125' text-anchor='middle' fill='%23666' font-family='Arial' font-size='16'%3EDyson Vitara Pro%3C/text%3E%3C/svg%3E" alt="Dyson Vitara Pro" loading="lazy">
+            <div class="product-card-content">
+              <h3>Dyson Vitara Pro</h3>
+              <span class="price">$299.99</span>
+              <a href="#" class="btn add-to-cart-btn">Add to Cart</a>
+            </div>
+          </div>
+          <div class="product-card" data-price="199.99">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Crect width='300' height='250' fill='%23f5f5f5'/%3E%3Ctext x='150' y='125' text-anchor='middle' fill='%23666' font-family='Arial' font-size='16'%3EDyson Citrus Essential%3C/text%3E%3C/svg%3E" alt="Dyson Citrus Essential" loading="lazy">
+            <div class="product-card-content">
+              <h3>Dyson Citrus Essential</h3>
+              <span class="price">$199.99</span>
+              <a href="#" class="btn add-to-cart-btn">Add to Cart</a>
+            </div>
+          </div>
+          <div class="product-card" data-price="399.99">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 250'%3E%3Crect width='300' height='250' fill='%23e8e8e8'/%3E%3Ctext x='150' y='125' text-anchor='middle' fill='%23666' font-family='Arial' font-size='16'%3EDyson Ultra Citrus%3C/text%3E%3C/svg%3E" alt="Dyson Ultra Citrus" loading="lazy">
+            <div class="product-card-content">
+              <h3>Dyson Ultra Citrus Max</h3>
+              <span class="price">$399.99</span>
+              <a href="#" class="btn add-to-cart-btn">Add to Cart</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast-message" class="toast" role="status" aria-live="polite"></div>
+
+  <footer class="section">
+    <div class="container footer-content">
+      <div class="footer-links">
+        <h3>Dyson</h3>
+        <ul>
+          <li><a href="#">About Dyson</a></li>
+          <li><a href="#">Customer Support</a></li>
+          <li><a href="#">Warranty & Service</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div class="social-icons">
+        <a href="#" aria-label="Follow Dyson on Twitter">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M22.46 6c-.77.34-1.6.57-2.46.66.89-.53 1.57-1.37 1.89-2.37-.84.5-1.78.87-2.78 1.07-1.77-1.89-4.63-1.89-6.4 0-1.4 1.4-1.8 3.5-.88 5.3C8.4 12.3 5 10.4 2.6 7.7c-.55.95-.87 2.05-.87 3.2.0 2.2 1.1 4.1 2.8 5.2-1.1.03-2.1-.34-2.9-.8v.06c0 3.03 2.15 5.56 5 6.13-1.2.33-2.45.4-3.7.1-.8.25-1.6.4-2.4.4-1.8 0-3.5-.3-5.2-.9.8 2.5 3.3 4.3 6.1 4.4-2.1 1.7-4.8 2.7-7.7 2.7-1.9 0-3.8-.4-5.5-1.2.8 2.5 3.3 4.3 6.1 4.4 7.3.1 13.4-5.9 13.4-13.4 0-.15-.02-.3-.04-.45.89-.64 1.66-1.43 2.27-2.33z" fill="currentColor"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Follow Dyson on Instagram">
+          <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 2.16c3.2 0 3.6.01 4.8.07 1.1.05 1.7.2 2.2.4s.8.4 1.2.8c.4.4.6.9.8 1.2.2.5.3 1.1.4 2.2.06 1.2.07 1.6.07 4.8s-.01 3.6-.07 4.8c-.05 1.1-.2 1.7-.4 2.2s-.4.8-.8 1.2c-.4.4-.9.6-1.2.8-.5.2-1.1.3-2.2.4-1.2.06-1.6.07-4.8.07s-3.6-.01-4.8-.07c-1.1-.05-1.7-.2-2.2-.4s-.8-.4-1.2-.8c-.4-.4-.6-.9-.8-1.2-.2-.5-.3-1.1-.4-2.2-.06-1.2-.07-1.6-.07-4.8s.01-3.6.07-4.8c.05-1.1.2-1.7.4-2.2s.4-.8.8-1.2c.4-.4.9-.6 1.2-.8.5-.2 1.1-.3 2.2-.4 1.2-.06 1.6-.07 4.8-.07zm0 1.62c-3.1 0-3.4.01-4.5.06-1.0.04-1.5.17-1.8.3s-.5.2-.7.4-.3.4-.4.7-.1.8-.3 1.8c-.05 1.1-.06 1.4-.06 4.5s.01 3.4.06 4.5c.04 1.0.17 1.5.3 1.8s.2.5.4.7c.3.2.6.3.7.4.5.1 1.0.2 1.8.3s1.4.06 4.5.06 3.4-.01 4.5-.06c1.0-.04 1.5-.17 1.8-.3s.5-.2.7-.4c.2-.3.3-.6.4-.7.1-.5.2-1.0.3-1.8.05-1.1.06-1.4.06-4.5s-.01-3.4-.06-4.5c-.04-1.0-.17-1.5-.3-1.8s-.2-.5-.4-.7c-.3-.2-.6-.3-.7-.4-.5-.1-1.0-.2-1.8-.3-1.1-.05-1.4-.06-4.5-.06zM12 7a5 5 0 0 0-5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0-5-5zm0 1.62a3.38 3.38 0 1 1 0 6.76 3.38 3.38 0 0 1 0-6.76zm4.84-2.4a.97.97 0 1 0 0 1.94.97.97 0 0 0 0-1.94z" fill="currentColor"/>
+          </svg>
+        </a>
+      </div>
+      <div class="newsletter">
+        <h3>Stay Updated</h3>
+        <p>Subscribe for exclusive Dyson offers and product updates.</p>
+        <form id="newsletter-form" class="newsletter-form">
+          <input type="email" name="email" id="newsletter-email" placeholder="Enter your email" required aria-label="Email address for newsletter">
+          <button type="submit">Subscribe</button>
+        </form>
+        <div id="newsletter-status" class="newsletter-status" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </footer>
+  
+  <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle dark mode">🌓</button>
+  
+  <script>
+    // JavaScript for page interactivity
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // Initial page loader
+      const loader = document.getElementById('page-loader');
+      window.addEventListener('load', () => {
+        loader.classList.add('hidden');
+      });
+
+      // Accessibility: prefers-reduced-motion check
+      const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const shouldAnimate = !motionQuery.matches;
+
+      // Enhanced Intersection Observer for animations
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const animateOnScroll = (entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            
+            // Add staggered animation for multiple elements
+            if (entry.target.classList.contains('feature-card')) {
+              const cards = document.querySelectorAll('.feature-card');
+              const index = Array.from(cards).indexOf(entry.target);
+              entry.target.style.animationDelay = `${index * 0.2}s`;
+            }
+            
+            if (entry.target.classList.contains('product-card')) {
+              const cards = document.querySelectorAll('.product-card');
+              const index = Array.from(cards).indexOf(entry.target);
+              entry.target.style.animationDelay = `${index * 0.1}s`;
+            }
+            
+            observer.unobserve(entry.target);
+          }
+        });
+      };
+
+      if (shouldAnimate) {
+        const observer = new IntersectionObserver(animateOnScroll, observerOptions);
+        document.querySelectorAll('[data-animate="true"], .specs-table-wrapper, .product-card').forEach(el => {
+          observer.observe(el);
+        });
+      }
+
+      // Add typing animation for hero title
+      const heroTitle = document.querySelector('.hero-content h1');
+      if (heroTitle && shouldAnimate) {
+        const text = heroTitle.textContent;
+        heroTitle.textContent = '';
+        heroTitle.style.borderRight = '2px solid var(--orange-accent)';
+        
+        let i = 0;
+        const typeWriter = () => {
+          if (i < text.length) {
+            heroTitle.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+          } else {
+            setTimeout(() => {
+              heroTitle.style.borderRight = 'none';
+            }, 1000);
+          }
+        };
+        
+        setTimeout(typeWriter, 1000);
+      }
+
+      // Hero Video Controls
+      const video = document.getElementById('hero-video');
+      const playPauseBtn = document.getElementById('play-pause-btn');
+      const playIcon = document.getElementById('play-icon');
+      const pauseIcon = document.getElementById('pause-icon');
+
+      playPauseBtn.addEventListener('click', () => {
+        if (video.paused) {
+          video.play();
+          playIcon.style.display = 'none';
+          pauseIcon.style.display = 'block';
+        } else {
+          video.pause();
+          playIcon.style.display = 'block';
+          pauseIcon.style.display = 'none';
+        }
+      });
+
+      // Copy to Clipboard Function
+      window.copySpecs = () => {
+        const specsTable = document.getElementById('product-specs');
+        const textToCopy = specsTable.innerText;
+        
+        navigator.clipboard.writeText(textToCopy).then(() => {
+          showToast('Specifications copied!');
+        }).catch(err => {
+          console.error('Failed to copy text: ', err);
+          showToast('Failed to copy.');
+        });
+      };
+
+      // Toast Notification function
+      const showToast = (message) => {
+        const toast = document.getElementById('toast-message');
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 3000);
+      };
+
+      // Newsletter Form Validation
+      const newsletterForm = document.getElementById('newsletter-form');
+      const newsletterStatus = document.getElementById('newsletter-status');
+
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const emailInput = document.getElementById('newsletter-email');
+        if (emailInput.checkValidity()) {
+          newsletterStatus.textContent = 'Thank you for subscribing to Dyson updates!';
+          newsletterStatus.style.color = '#4CAF50';
+          setTimeout(() => {
+            newsletterForm.reset();
+            newsletterStatus.textContent = '';
+          }, 3000);
+        } else {
+          newsletterStatus.textContent = 'Please enter a valid email address.';
+          newsletterStatus.style.color = '#f44336';
+        }
+      });
+
+      // Product Filtering/Sorting
+      const productList = document.getElementById('product-list');
+      const productCards = Array.from(productList.children);
+
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          // Remove active class from all buttons
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          // Add active class to clicked button
+          e.target.classList.add('active');
+          
+          const sortType = e.target.dataset.sort;
+          let sortedCards = [];
+
+          if (sortType === 'popular') {
+            sortedCards = productCards;
+          } else if (sortType === 'price-low') {
+            sortedCards = productCards.sort((a, b) => {
+              const priceA = parseFloat(a.dataset.price);
+              const priceB = parseFloat(b.dataset.price);
+              return priceA - priceB;
+            });
+          }
+
+          productList.innerHTML = '';
+          sortedCards.forEach(card => productList.appendChild(card));
+        });
+      });
+      
+      // Add to cart toast
+      document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const productName = e.target.closest('.product-card').querySelector('h3').textContent;
+            showToast(`${productName} added to cart!`);
+        });
+      });
+
+      // Dark Mode Toggle
+      const darkModeToggle = document.getElementById('dark-mode-toggle');
+      
+      darkModeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        if (currentTheme === 'dark') {
+          document.documentElement.removeAttribute('data-theme');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+
+      // Load saved theme
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+
+      // Add parallax effect to floating oranges
+      if (shouldAnimate) {
+        window.addEventListener('scroll', () => {
+          const scrolled = window.pageYOffset;
+          const parallax = scrolled * 0.5;
+          
+          document.querySelectorAll('.floating-orange').forEach((orange, index) => {
+            const speed = 0.3 + (index * 0.1);
+            orange.style.transform = `translateY(${parallax * speed}px)`;
+          });
+        });
+      }
+
+      // Add ripple effect to buttons
+      document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+          const ripple = document.createElement('span');
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          const x = e.clientX - rect.left - size / 2;
+          const y = e.clientY - rect.top - size / 2;
+          
+          ripple.style.width = ripple.style.height = size + 'px';
+          ripple.style.left = x + 'px';
+          ripple.style.top = y + 'px';
+          ripple.classList.add('ripple');
+          
+          this.appendChild(ripple);
+          
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+        });
+      });
+
+      // Add CSS for ripple effect
+      const style = document.createElement('style');
+      style.textContent = `
+        .btn {
+          position: relative;
+          overflow: hidden;
+        }
+        .ripple {
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.3);
+          transform: scale(0);
+          animation: ripple-animation 0.6s linear;
+          pointer-events: none;
+        }
+        @keyframes ripple-animation {
+          to {
+            transform: scale(4);
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+
+      // Add smooth scroll behavior for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+
+      // Add loading animation for images
+      document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('load', function() {
+          this.style.opacity = '1';
+          this.style.transform = 'scale(1)';
+        });
+        
+        img.style.opacity = '0';
+        img.style.transform = 'scale(0.8)';
+        img.style.transition = 'all 0.6s ease';
+      });
+
+      // Product Overview Section Functionality
+      
+      // Gallery thumbnail functionality
+      const thumbnails = document.querySelectorAll('.thumbnail');
+      const mainImage = document.querySelector('.main-product-image');
+      
+      thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+          // Remove active class from all thumbnails
+          thumbnails.forEach(t => t.classList.remove('active'));
+          
+          // Add active class to clicked thumbnail
+          this.classList.add('active');
+          
+          // Update main image
+          const newImageSrc = this.dataset.image;
+          if (mainImage && newImageSrc) {
+            mainImage.style.opacity = '0';
+            mainImage.style.transform = 'scale(0.8)';
+            
+            setTimeout(() => {
+              mainImage.src = newImageSrc;
+              mainImage.style.opacity = '1';
+              mainImage.style.transform = 'scale(1)';
+            }, 300);
+          }
+        });
+      });
+
+      // Enhanced intersection observer for product overview animations
+      const overviewObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            
+            // Staggered animation for highlight cards
+            if (entry.target.classList.contains('highlight-card')) {
+              const cards = document.querySelectorAll('.highlight-card');
+              const index = Array.from(cards).indexOf(entry.target);
+              entry.target.style.animationDelay = `${index * 0.2}s`;
+            }
+            
+            // Staggered animation for spec items
+            if (entry.target.classList.contains('spec-item')) {
+              const items = document.querySelectorAll('.spec-item');
+              const index = Array.from(items).indexOf(entry.target);
+              entry.target.style.animationDelay = `${index * 0.1}s`;
+            }
+          }
+        });
+      }, { threshold: 0.2 });
+
+      // Observe all animated elements in product overview
+      document.querySelectorAll('.highlight-card, .spec-item, .product-gallery, .tech-specs, .overview-cta').forEach(el => {
+        overviewObserver.observe(el);
+      });
+
+      // Enhanced Features and Characteristics Animations
+      const featuresObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            
+            // Staggered animation for feature cards
+            if (entry.target.classList.contains('feature-card')) {
+              const cards = document.querySelectorAll('.feature-card');
+              const index = Array.from(cards).indexOf(entry.target);
+              entry.target.style.animationDelay = `${index * 0.2}s`;
+            }
+            
+            // Staggered animation for characteristic items
+            if (entry.target.classList.contains('characteristic-item')) {
+              const items = document.querySelectorAll('.characteristic-item');
+              const index = Array.from(items).indexOf(entry.target);
+              entry.target.style.animationDelay = `${index * 0.1}s`;
+            }
+          }
+        });
+      }, { threshold: 0.2 });
+
+      // Observe feature cards and characteristic items
+      document.querySelectorAll('.feature-card, .characteristic-item').forEach(el => {
+        featuresObserver.observe(el);
+      });
+
+      // Enhanced hover effects for feature cards
+      document.querySelectorAll('.feature-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-15px) scale(1.02)';
+          const pulse = this.querySelector('.feature-pulse');
+          if (pulse) {
+            pulse.style.animation = 'none';
+            setTimeout(() => {
+              pulse.style.animation = 'featurePulse 2s ease-out infinite';
+            }, 10);
+          }
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+
+      // Interactive characteristic items
+      document.querySelectorAll('.characteristic-item').forEach(item => {
+        item.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateX(10px) scale(1.02)';
+          const icon = this.querySelector('.characteristic-icon');
+          if (icon) {
+            icon.style.transform = 'scale(1.1) rotate(5deg)';
+          }
+        });
+        
+        item.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateX(0) scale(1)';
+          const icon = this.querySelector('.characteristic-icon');
+          if (icon) {
+            icon.style.transform = 'scale(1) rotate(0deg)';
+          }
+        });
+      });
+
+      // Auto-rotate gallery images
+      if (shouldAnimate) {
+        let currentThumbnailIndex = 0;
+        setInterval(() => {
+          if (thumbnails.length > 0) {
+            thumbnails[currentThumbnailIndex].click();
+            currentThumbnailIndex = (currentThumbnailIndex + 1) % thumbnails.length;
+          }
+        }, 4000);
+      }
+
+      // Enhanced hover effects for highlight cards
+      document.querySelectorAll('.highlight-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-15px) scale(1.02)';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+
+      // Parallax effect for product overview section
+      if (shouldAnimate) {
+        window.addEventListener('scroll', () => {
+          const scrolled = window.pageYOffset;
+          const overviewSection = document.querySelector('.product-overview-section');
+          
+          if (overviewSection) {
+            const rect = overviewSection.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+            
+            if (isVisible) {
+              const parallaxSpeed = 0.5;
+              const yPos = -(scrolled * parallaxSpeed);
+              overviewSection.style.transform = `translateY(${yPos}px)`;
+            }
+          }
+        });
+      }
+
+      // Add typing animation to overview subtitle
+      if (shouldAnimate) {
+        const subtitle = document.querySelector('.overview-subtitle');
+        if (subtitle) {
+          const text = subtitle.textContent;
+          subtitle.textContent = '';
+          subtitle.style.borderRight = '2px solid var(--dyson-red)';
+          
+          let i = 0;
+          const typeWriter = () => {
+            if (i < text.length) {
+              subtitle.textContent += text.charAt(i);
+              i++;
+              setTimeout(typeWriter, 50);
+            } else {
+              setTimeout(() => {
+                subtitle.style.borderRight = 'none';
+              }, 1000);
+            }
+          };
+          
+          // Start typing animation when section comes into view
+          const subtitleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                typeWriter();
+                subtitleObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.5 });
+          
+          subtitleObserver.observe(subtitle);
+        }
+      }
+
+      // Add counter animation for technical specs
+      if (shouldAnimate) {
+        const specItems = document.querySelectorAll('.spec-item');
+        specItems.forEach(item => {
+          const specObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                const specText = entry.target.querySelector('.spec-details p');
+                if (specText) {
+                  const text = specText.textContent;
+                  const numbers = text.match(/\d+/g);
+                  
+                  if (numbers) {
+                    numbers.forEach(number => {
+                      const num = parseInt(number);
+                      let current = 0;
+                      const increment = num / 30;
+                      const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= num) {
+                          current = num;
+                          clearInterval(timer);
+                        }
+                        specText.textContent = text.replace(number, Math.floor(current));
+                      }, 50);
+                    });
+                  }
+                }
+                specObserver.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.5 });
+          
+          specObserver.observe(item);
+        });
+      }
+
+    });
+  </script>
+</body>
+</html>
